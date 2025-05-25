@@ -1,0 +1,14 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'ZegoVoiceCall'
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
+include ':zego-zim-react-native'
+project(':zego-zim-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/zego-zim-react-native/android')
+
+// include ':zego-zpns-react-native'
+// project(':zego-zpns-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/zego-zpns-react-native/android')
+include ':zego-zpns-react-native'
+project(':zego-zpns-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/zego-zpns-react-native/android')
+
